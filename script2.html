@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cálculo da Média</title>
+
+<style>*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #4b4b4e, #000000);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.calcular{
+    background:#fff;
+    width:380px;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    text-align:center;
+}
+
+h2{
+    color:#333;
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-bottom:10px;
+    color:#555;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:2px solid #ddd;
+    border-radius:10px;
+    font-size:18px;
+    text-align:center;
+    margin-bottom:20px;
+    outline:none;
+}
+
+input:focus{
+    border-color:#47474b;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#48494b;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#000000;
+    transform:scale(1.03);
+}
+
+
+</style>
+
+<script>
+function calcular() {
+    var nota1 = parseFloat(document.getElementById("nota1").value);
+    var nota2 = parseFloat(document.getElementById("nota2").value);
+
+    if (isNaN(nota1) || isNaN(nota2)) {
+        alert("Digite as duas notas.");
+        return;
+    }
+
+    var media = (nota1 + nota2) / 2;
+
+    if (media == 10) {
+        alert("Média: " + media + "\nAprovado com Distinção");
+    } else if (media >= 7) {
+        alert("Média: " + media.toFixed(1) + "\nAprovado");
+    } else {
+        alert("Média: " + media.toFixed(1) + "\nReprovado");
+    }
+}
+</script>
+
+</head>
+<body>
+
+<div class="calcular">
+    <h2>Cálculo da Média</h2>
+
+    <label for="nota1">Nota 1</label>
+    <input type="number" id="nota1" placeholder="Digite a primeira nota">
+
+    <label for="nota2">Nota 2</label>
+    <input type="number" id="nota2" placeholder="Digite a segunda nota">
+
+    <button onclick="calcular()">Calcular Média</button>
+</div>
+
+</body>
+</html>

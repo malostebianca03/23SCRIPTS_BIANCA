@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>script 18:</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #4b4b4e, #000000);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+        
+        .caixa{
+            background:#fff;
+            width:400px;
+            padding:35px;
+            border-radius:20px;
+            box-shadow:0 10px 25px rgba(0,0,0,.4);
+            text-align:center;
+        }
+        
+        h2{
+            margin-bottom:25px;
+            color:#333;
+        }
+        
+        label{
+            display:block;
+            text-align:left;
+            margin-bottom:8px;
+            font-weight:bold;
+            color:#555;
+        }
+        
+        input{
+            width:100%;
+            padding:12px;
+            margin-bottom:18px;
+            border:2px solid #ddd;
+            border-radius:10px;
+            font-size:16px;
+            outline:none;
+        }
+        
+        input:focus{
+            border-color:#47474b;
+        }
+        
+        button{
+            width:100%;
+            padding:12px;
+            background:#48494b;
+            color:#fff;
+            border:none;
+            border-radius:10px;
+            font-size:18px;
+            cursor:pointer;
+            transition:.3s;
+        }
+        
+        button:hover{
+            background:#000000;
+            transform:scale(1.03);
+        }
+        
+        
+        </style>
+   
+</html>
+    <script type="text/javascript">
+        function sacar() {
+
+            var valor = parseInt(prompt("Digite o valor do saque (10 a 900):"));
+
+            if (valor < 10 || valor > 900 || valor % 10 != 0) {
+                alert("Valor inválido! Digite um valor entre 10 e 900 e múltiplo de 10.");
+                return;
+            }
+
+            var notas100 = Math.floor(valor / 100);
+            valor = valor % 100;
+
+            var notas50 = Math.floor(valor / 50);
+            valor = valor % 50;
+
+            var notas20 = Math.floor(valor / 20);
+            valor = valor % 20;
+
+            var notas10 = Math.floor(valor / 10);
+
+            var resultado = "Notas fornecidas:\n";
+
+            if (notas100 > 0) resultado += notas100 + " nota(s) de 100\n";
+            if (notas50 > 0) resultado += notas50 + " nota(s) de 50\n";
+            if (notas20 > 0) resultado += notas20 + " nota(s) de 20\n";
+            if (notas10 > 0) resultado += notas10 + " nota(s) de 10\n";
+
+            alert(resultado);
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="caixa">
+
+        <h2>Caixa Eletrônico</h2>
+    
+        <button onclick="sacar()">Sacar dinheiro</button>
+    </div>
+
+
+</body>
+</html>

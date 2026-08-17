@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>script 13:</title>
+    <!DOCTYPE html>
+    <html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Decrescente:</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background: linear-gradient(135deg, #4b4b4e, #000000);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            .equacao {
+                background: #fff;
+                width: 400px;
+                padding: 35px;
+                border-radius: 20px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, .4);
+                text-align: center;
+            }
+
+            h2 {
+                margin-bottom: 25px;
+                color: #333;
+            }
+
+            label {
+                display: block;
+                text-align: left;
+                margin-bottom: 8px;
+                font-weight: bold;
+                color: #555;
+            }
+
+            input {
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 18px;
+                border: 2px solid #ddd;
+                border-radius: 10px;
+                font-size: 16px;
+                outline: none;
+            }
+
+            input:focus {
+                border-color: #47474b;
+            }
+
+            button {
+                width: 100%;
+                padding: 12px;
+                background: #48494b;
+                color: #fff;
+                border: none;
+                border-radius: 10px;
+                font-size: 18px;
+                cursor: pointer;
+                transition: .3s;
+            }
+
+            button:hover {
+                background: #000000;
+                transform: scale(1.03);
+            }
+        </style>
+
+    </html>
+    <script type="text/javascript">
+        function calcularNumeros() {
+
+            var a = parseFloat(prompt("Digite o valor de a:"));
+            var b = parseFloat(prompt("Digite o valor de b:"));
+            var c = parseFloat(prompt("Digite o valor de c:"));
+
+
+            if (a == 0) {
+                alert("Não é equação do 2º grau (a não pode ser 0)");
+                return;
+            }
+
+            var delta = (b * b) - (4 * a * c);
+
+            if (delta < 0) {
+                alert("Não existem raízes reais (Δ < 0)");
+            } else if (delta == 0) {
+                var x = -b / (2 * a);
+                alert("Uma raiz real: x = " + x.toFixed(2));
+            } else {
+                var x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                var x2 = (-b - Math.sqrt(delta)) / (2 * a);
+
+                alert(
+                    "Duas raízes reais:" +
+                    "\nx1 = " + x1.toFixed(2) +
+                    "\nx2 = " + x2.toFixed(2)
+                );
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="equacao">
+
+        <h2>Equação do 2º Grau</h2>
+    
+        <button onclick="calcularNumeros()">Calcular</button>
+    </div>
+
+</body>
+
+</html>
